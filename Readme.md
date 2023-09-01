@@ -9,3 +9,5 @@
 ```npm i body-parser```
 * Nodemon
 ```npm install -g nodemon```
+* ejs
+```npm install ejs```
