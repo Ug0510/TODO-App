@@ -2,3 +2,167 @@
     margin:0;
     padding:0;
 }
+:root{
+    --work-color:red;
+}
+body{
+    background-color: rgb(140, 146, 151);
+    font-family: 'Courier New', Courier, monospace;
+}
+hr{
+    background-color: lightgray;
+    color:lightgray;
+}
+.container{
+    width: 50%;
+    background-color: white;
+    margin:auto;
+    padding-bottom: 1rem;
+}
+.container>h1{
+    text-align: center;
+    padding: 1.6rem 0 1rem;
+    color:grey;
+}
+.container input,.container select{
+    display: block;
+    border: none;
+    font-size: 15px;
+    width: 90%;
+    padding: 0.5rem 0rem;
+    font-weight: 500;
+    padding-top:0rem;
+    padding-bottom:2rem;
+}
+.container input{
+    padding: 0.5rem 0.2rem;;
+    padding-bottom: 2rem;
+}
+input,select:focus{
+    outline: none;
+}
+.container input, .container label, .container select{
+    margin-left: 1rem;
+    color: grey;
+}
+.container label{
+    margin-top: 0.9rem;
+    font-size: 15px;
+    font-weight: 600;
+}
+.row{
+    display: flex;
+    flex: 1 1 auto;
+}
+.row .col-6{
+    width:50%;
+}
+.row .col-6:first-child{
+    border-right: 2px solid lightgrey;
+}
+.row input , .row select{
+    font-weight: 600;
+}
+.onfocus-effect:focus-within , input:focus, select:focus{
+    background-color: rgb(223, 226, 233);
+}
+#todoDescription:placeholder-shown{
+    opacity: 0.4;
+}
+button {
+    padding: 1rem 1.2rem;
+    font-size: 20px;
+    min-width: 12rem;
+    text-align: left;
+    margin: 0.5rem auto;
+    display: block;
+    color:white;
+    text-transform: capitalize;
+    border: none;
+}
+button i{
+    margin-right: 1rem;
+    font-weight: 900;
+}
+#add-task{
+    background-color: rgb(81, 78, 78);
+}
+#delete-task{
+    background-color: #EF0107;
+}
+#todolist li{
+    border-top: 2px solid lightgray;
+    width:90%;
+    list-style: none;
+    display: block;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+}
+#todolist .divider1 input{
+    margin: 0;
+    width: 70%;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    border: 2px solid lightgray;
+}
+#todolist .divider1{
+    width: 5%;
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 0.6rem;
+    max-height: 25px;
+}
+#todolist .divider2{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+#todolist p:first-child{
+    font-size:18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color:grey;
+}
+#todolist .divider2 p:nth-child(2){
+    color:rgba(119, 136, 153,0.6);
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 0.3rem;
+}
+#todolist .divider2 p i {
+    margin-right: 0.6rem;
+}
+#todolist .divider3{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#todolist .divider3 p{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+#todolist .school{
+    background-color: #FFC72C;
+}
+#todolist .personal{
+    background-color: #0066b2;
+}
+#todolist .work{
+    background-color: #720e9e;
+}
+#todolist .cleaning{
+    background-color: #ff8c00;
+}
+#todolist .others{
+    background-color: #1B4D3E;
+}

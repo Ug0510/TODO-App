@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
     <div class="container">
-        <h1>Todo App</h1>
+        <h1>TODO App</h1>
         <hr>
         <form action="/" method="POST">
-            <label for="todoDescription">DESCRIPTION</label>
-            <input type="text" name="description" id="todoDescription" placeholder="What do you need to do?">
+            <div class="onfocus-effect">
+                <label for="todoDescription">DESCRIPTION</label>
+                <input type="text" name="description" id="todoDescription" placeholder="What do you need to do?">
+            </div>
             <hr>
             <div class="row">
-                <div class="col-6">
+                <div class="col-6 onfocus-effect">
                     <label for="todoCategory">CATEGORY</label>
                     <select name="category" id="todoCategory">
                         <option value="" disabled selected>Choose a Category</option>
@@ -26,25 +30,30 @@
                         <option value="others">Others</option>
                     </select>
                 </div>
-                <div class="col-6">
+                <div class="col-6 onfocus-effect ">
                     <label for="todoDate">DUE DATE</label>
                     <input type="date" id="todoDate" name="date">
                 </div>
             </div>
             <hr>
-            <div class="buttons">
-                <button type="submit" id="add-task">Add Task</button>
-            </div>
+            <button type="submit" id="add-task"><i class="fa-solid fa-plus"></i>ADD TASK</button>
         </form>
         <form action="/delete" method="POST">
-            <button type="submit" id="delete-task">Delete Selected</button>
+            <button type="submit" id="delete-task"><i class="fa-solid fa-trash"></i>DELETE TASKS</button>
             <ul id="todolist">
                 <% for(let i = 0; i < todoList.length; i++) { %>
                     <li>
-                        <input type="checkbox" name="tasksToDelete" value="<%= i %>">
-                        <%= todoList[i].description %>
-                        <%= todoList[i].date %>
-                        <%= todoList[i].category %>
+                        <div class="divider1">
+                            <input type="checkbox" name="tasksToDelete" value="<%= i %>">
+                        </div>
+                        <div class="divider2">
+                            <p><%= todoList[i].description %></p>
+                            <p><i class="fa-solid fa-calendar-days"></i><%= todoList[i].date %></p>
+                        </div>
+                        <div class="divider3">
+                            <p class="<%= todoList[i].category %>"><%= todoList[i].category %></p>
+
+                        </div>
                     </li>
                 <% } %>
             </ul>
