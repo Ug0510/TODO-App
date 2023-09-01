@@ -66,16 +66,30 @@ app.post('/', async function (req, res) {
     }
 });
 
-app.post('/delete', function (req, res) {
-    try{
+app.post('/delete-todo', async function (req, res) {
+    try {
         const tasksToDelete = req.body.tasksToDelete;
-        todoList = todoList.filter((task, index) => !tasksToDelete.includes(index.toString()));
-    }catch(err)
-    {
-        
+
+        // if multiple todos to be deleted
+        if(Array.isArray(tasksToDelete))
+        {
+            for (const taskId of tasksToDelete) {
+                // Use the Mongoose 'deleteOne' method to delete the task by its unique ID
+                await Todos.deleteOne({ _id: taskId });
+            }
+        }
+        else // if single todo is to be deleted
+        {
+            await Todos.deleteOne({_id:tasksToDelete});
+        }    
+
+        res.redirect('/');
+    } catch (err) {
+        console.log('Error deleting todo', err);
+        res.redirect('/');
     }
-    res.redirect('/');
 });
+
 
 app.listen(port, function (err) {
     if (err) {

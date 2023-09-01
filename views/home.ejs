@@ -38,13 +38,13 @@
             <hr>
             <button type="submit" id="add-task"><i class="fa-solid fa-plus"></i>ADD TASK</button>
         </form>
-        <form action="/delete" method="POST">
+        <form action="/delete-todo" method="POST">
             <button type="submit" id="delete-task"><i class="fa-solid fa-trash"></i>DELETE TASKS</button>
             <ul id="todolist">
                 <% for(let i = 0; i < todoList.length; i++) { %>
                     <li>
                         <div class="divider1">
-                            <input type="checkbox" name="tasksToDelete" value="<%= i %>">
+                            <input type="checkbox" name="tasksToDelete" value="<%= todoList[i]._id %>">
                         </div>
                         <div class="divider2">
                             <p><%= todoList[i].description %></p>
@@ -52,13 +52,12 @@
                         </div>
                         <div class="divider3">
                             <p class="<%= todoList[i].category %>"><%= todoList[i].category %></p>
-
                         </div>
                     </li>
                 <% } %>
             </ul>
-            
         </form>
+        
     </div>
 </body>
 </html>
