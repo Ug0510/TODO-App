@@ -44,3 +44,9 @@ This project will start using nodemon server as it's already added in scripts so
 
 * Now you can view your project on localhost port 8000
 <a href="http://localhost:8000/">http://localhost:8000/</a>
+
+
+### Project View
+<center> 
+<img width="1470" alt="Screenshot 2023-09-02 at 12 25 57 AM" src="https://github.com/Ug0510/TODO-App/assets/85778092/49e57641-2b71-4fa4-8e87-b491c8c7a609">
+<center> 
