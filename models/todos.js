@@ -10,17 +10,17 @@ const todoSchema = new mongoose.Schema({
     },
     // 'number' field represents the contact number
     category: {
-        type: Number,       // Data type: String
+        type: String,       // Data type: String
         required: true      // Field is required
     },
     date: {
-        type: Date,
+        type: String,
         required:true
     }
 });
 
-// Create a Mongoose model named 'Contact' based on the 'contactSchema'
-const Contact = mongoose.model('Contact', contactSchema);
+// Create a Mongoose model named 'Todos' based on the 'todoSchema'
+const Todos = mongoose.model('Todos', todoSchema);
 
 //exporting module to use it outside
-module.exports = Contact;
+module.exports = Todos;
