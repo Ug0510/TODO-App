@@ -56,7 +56,6 @@ app.post('/', async function (req, res) {
             category: req.body.category,
             date: req.body.date
         };
-        console.log(req.body);
         await Todos.create(newTodo);
         res.redirect('/');
     }
